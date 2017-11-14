@@ -5,7 +5,6 @@ def get_first_name_of_season_winner(data, season)
     attributes.each do |description|
       description.each do |characteristic, value|
         if number == season && value == "Winner"
-          binding.pry
           return description["name"].split(" ").first
         end
     end
