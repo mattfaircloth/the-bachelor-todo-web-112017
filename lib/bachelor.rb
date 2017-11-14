@@ -56,7 +56,7 @@ def get_average_age_for_season(data, season)
     attributes.each do |description|
       description.each do |characteristic, value|
         if number == season
-          average << description["age"]
+          average << description["age"].to_i
         end
     end
    end
