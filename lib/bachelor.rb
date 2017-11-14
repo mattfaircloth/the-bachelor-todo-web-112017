@@ -43,7 +43,7 @@ def get_occupation(data, hometown)
     attributes.each do |description|
       description.each do |characteristic, value|
         if value == hometown
-          return description["occupation"].first
+          return description["occupation"]
         end
     end
    end
