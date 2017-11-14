@@ -51,19 +51,18 @@ def get_occupation(data, hometown)
 end
 
 def get_average_age_for_season(data, season)
-  final_average = []
+  average = []
   data.each do |number, attributes|
     attributes.each do |description|
       description.each do |characteristic, value|
         if number == season
-          final_average << description["age"].to_i
+          average << description["age"].to_i
         end
     end
    end
   end
   # average.inject(0){|sum,x| sum + x } / average.length
-  # #inject(average.inject(0) { |sum, x| sum += x } / average.size).to_f
+  average.inject(average.inject(0) { |sum, x| sum += x } / average.size).to_f
   # return average.to_s
-  average = final_average.sum / final_average.size.to_f
-  return average.to_s
+  
 end
