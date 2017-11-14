@@ -50,20 +50,35 @@ def get_occupation(data, hometown)
   end
 end
 
+# def get_average_age_for_season(data, season)
+#   average = []
+#   data.each do |number, attributes|
+#     attributes.each do |description|
+#       description.each do |characteristic, value|
+#         if number == season
+#           average << description["age"].to_i
+#         end
+#     end
+#    end
+#   end
+#   sum = 0
+#   average.each do |num|
+#     sum += num
+#  end
+#  sum.to_f.ceil / average.size
+# end
+
 def get_average_age_for_season(data, season)
-  average = []
+  age_total = 0
+  num_of_contestants = 0
   data.each do |number, attributes|
-    attributes.each do |description|
-      description.each do |characteristic, value|
-        if number == season
-          average << description["age"].to_i
-        end
+      attributes.each do |description|
+        description.each do |characteristic, value|
+          age_total += (description["age"]).to_i
+          num_of_contestants += 1
+          end
+      end
+     end
     end
-   end
-  end
-  sum = 0
-  average.each do |num|
-    sum += num
- end
- sum.to_f.ceil / average.size
+  (age_total / num_of_contestants.to_f).round(0)
 end
