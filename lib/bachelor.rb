@@ -76,6 +76,7 @@ def get_average_age_for_season(data, season)
         description.each do |characteristic, value|
           age_total += (description["age"]).to_i
           num_of_contestants += 1
+          end
       end
      end
     end
