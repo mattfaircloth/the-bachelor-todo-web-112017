@@ -51,5 +51,15 @@ def get_occupation(data, hometown)
 end
 
 def get_average_age_for_season(data, season)
-  # code here
+  average = []
+  data.each do |number, attributes|
+    attributes.each do |description|
+      description.each do |characteristic, value|
+        if number == season
+          average << description["age"]
+        end
+    end
+   end
+  end
+  return average
 end
