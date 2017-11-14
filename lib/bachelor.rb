@@ -1,4 +1,4 @@
-require 'pry'
+#require 'pry'
 
 def get_first_name_of_season_winner(data, season)
   data.each do |number, attributes|
@@ -13,7 +13,15 @@ def get_first_name_of_season_winner(data, season)
  end
 
 def get_contestant_name(data, occupation)
-  # code here
+  data.each do |number, attributes|
+    attributes.each do |description|
+      description.each do |characteristic, value|
+        if value == occupation
+          return description["name"]
+        end
+    end
+   end
+  end
 end
 
 def count_contestants_by_hometown(data, hometown)
